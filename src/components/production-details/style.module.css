@@ -1,0 +1,100 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - (84px + 48px + 48px + 24px + 60px));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    background: #383838;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.container .releaseDate,
+.container .tags,
+.container .directors,
+.container .actors,
+.container .tagline {
+    margin: 0 1%;
+    width: 48%;
+}
+
+.container h4 {
+    text-align: center;
+    border-bottom: 1px solid #8d8d8d;
+    margin-bottom: 8px;
+    padding: 8px;
+    background: #00000047;
+    font-size: 14px;
+}
+
+.container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container ul li {
+    text-transform: capitalize;
+    margin: 4px 0;
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.container ul li::after {
+    content: ', ';
+}
+
+.container ul li:last-child::after {
+    content: '';
+}
+
+.container h4,
+.closeButton ul li {
+    font-size: 14px;
+}
+
+.closeButton {
+    background: #444444;
+    border: 0;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #838383;
+    z-index: 1;
+    box-shadow: 0 0 12px -4px black;
+}
+
+.closeButton img {
+    width: 18px;
+}
+
+.detailsBackground {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .05;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 1023px) {
+    .container {
+        height: calc(100vh - (84px + 48px + 48px + 24px + 60px + 58px));
+        justify-content: flex-start;
+    }
+
+    .closeButton {
+        background: #363638e0;
+    }
+
+}

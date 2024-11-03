@@ -1,0 +1,62 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.container form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.container input {
+    border: none;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    padding: 8px 16px;
+    background-color: #383838;
+    border-radius: 4px;
+    color: #c2c2c2;
+}
+
+.container .formButton {
+    width: 60px;
+    height: 32px;
+    background: #20a02f;
+    border: 0;
+    border-radius: 4px;
+    color: rgb(132 241 114);
+    position: absolute;
+    display: flex;
+    right: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .resultsButton {
+    color: #ffffff;
+    padding: 8px 16px;
+    margin: 4px;
+    background: #ffffff0a;
+    border: none;
+}
+
+.container ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    bottom: 60px;
+    background: #212122ed;
+    padding: 24px 0;
+    width: 100%;
+    backdrop-filter: blur(8px);
+}

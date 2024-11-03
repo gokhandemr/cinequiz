@@ -1,0 +1,52 @@
+.container {
+    width: 100%;
+    display: flex;
+    margin-bottom: 12px;
+    margin-top: -60px;
+    justify-content: center;
+}
+
+.button {
+    padding: 12px;
+    background: #212122;
+    backdrop-filter: blur(3px);
+    border: 0;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #2a2a2a;
+    box-shadow: inset -1px 0 #191919;
+    transition: all .3s;
+}
+
+.button:hover {
+    background: #303031;
+}
+
+.container>:last-child {
+    border-right: 0;
+    box-shadow: none;
+}
+
+.button>img {
+    margin-right: 8px;
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .container {
+        margin-top: 0;
+    }
+
+    .button {
+        padding: 8px;
+        font-size: 11px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button>img {
+        width: 18px;
+        height: 18px;
+    }
+}
