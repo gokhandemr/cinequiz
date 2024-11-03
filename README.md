@@ -4,7 +4,7 @@
 
 CineQuiz, oyuncuların resim, video vb. ipuçları yardımıyla doğru filmi veya diziyi tahmin etmeye çalıştığı eğlenceli bir oyundur.
 
-Demo: 
+Demo: https://cinequiz.tr/
 
 ---
 
