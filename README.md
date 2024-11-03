@@ -29,6 +29,16 @@ Demo:
 
 ---
 
+### Kurulum ve Kullanım:
+
+- **Adım 1: Klonlama:** `git clone https://github.com/gokhandemr/cinequiz.git`
+- **Adım 2: Proje Klasörünü Açma:** `cd cinequiz`
+- **Adım 4: .env Dosyası Örneği:** `VITE_AUTH=****(TMDb API Authorization)`
+- **Adım 5: Npm Yükleme:** `npm install`
+- **Adım 6: Çalıştırma:** `npm run dev`
+
+---
+
 ### İletişim
 
 _gkhandemir96@gmail.com_
