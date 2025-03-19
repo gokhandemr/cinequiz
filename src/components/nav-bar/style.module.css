@@ -1,0 +1,328 @@
+.container {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  z-index: 400;
+  top: 15dvh;
+  left: 0;
+  right: 0;
+  background-color: #212124;
+  box-shadow: 0 12px 12px -8px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.container.closed,
+.container > .closed {
+  transition: all 0.3s ease;
+  height: 0;
+  padding: 0;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+  will-change: height, padding, opacity;
+}
+
+.container > .closed {
+  position: absolute;
+  margin: auto;
+}
+
+.container > div,
+.container > ul {
+  transition: all 0.3s ease;
+}
+
+.container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container ul li {
+  margin-right: 48px;
+  padding-right: 48px;
+  border-right: 1px solid black;
+}
+
+.container ul li:hover a,
+.container ul li:hover button {
+  text-shadow: 0 0 8px;
+}
+
+.container ul li:last-child {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.container ul li a,
+.container ul li button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.container ul li a img,
+.container ul li button img {
+  margin-bottom: 12px;
+}
+
+.titleContainer {
+  position: relative;
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 32px;
+  padding: 0 48px;
+}
+
+.submitButton:hover > img {
+  transform: scale(1.2);
+  transition: all 0.1s;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.input {
+  background: transparent;
+  border: 1px solid #333;
+  padding: 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.submitButton {
+  background-color: green;
+  height: 41px;
+  width: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.otherTextTitle {
+  color: #888;
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.toggleButton {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #333;
+  color: #888;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggleButton img {
+  margin-right: 8px;
+  opacity: 0.4;
+  width: 16px;
+}
+
+.toggleButton:hover {
+  background-color: #4b4b4b;
+}
+
+.error {
+  color: var(--red);
+  text-align: center;
+  margin-bottom: 12px;
+  animation: error 0.5s ease;
+}
+
+@keyframes error {
+  0% {
+    transform: translateX(1px);
+  }
+
+  20% {
+    transform: translateX(-1px);
+  }
+
+  40% {
+    transform: translateX(1px);
+  }
+
+  60% {
+    transform: translateX(-1px);
+  }
+
+  80% {
+    transform: translateX(1px);
+  }
+
+  100% {
+    transform: translateX(-1px);
+  }
+}
+
+.navBackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 15dvh;
+  min-height: 100vh;
+  z-index: 350;
+}
+
+.userPanelContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.backButton {
+  width: 100%;
+  margin-bottom: 24px;
+  cursor: pointer;
+}
+
+.userPanelContainer .titleContainer,
+.userDetails {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.userPanelContainer .titleContainer {
+  justify-content: space-between;
+  padding: 0 0 24px 0;
+  margin: 0 0 24px 0;
+  border-bottom: 1px solid black;
+}
+
+.userPanelContainer .titleContainer .title {
+  padding: 0;
+}
+
+.userPanelContainer .titleContainer button {
+  padding: 12px 36px;
+  background-color: var(--red);
+  border-radius: 4px;
+}
+
+.userDetails {
+  justify-content: center;
+}
+
+.userDetails li {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #999;
+  text-wrap: nowrap;
+}
+.userDetails li strong {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.loginContainer .backButton,
+.registerContainer .backButton {
+  all: unset;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+}
+
+.submitButton .loader {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 4px solid;
+  border-color: rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.35) rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  .container ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .container ul li {
+    width: 100%;
+    margin: 0 0 12px 0;
+    padding: 0 0 12px 0;
+    border-right: 0;
+    border-bottom: 1px solid black;
+  }
+  .container ul li a img,
+  .container ul li button img {
+    width: 36px;
+  }
+
+  .container ul li button {
+    width: 100%;
+  }
+
+  .backButton {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .userPanelContainer .titleContainer {
+    justify-content: center;
+  }
+
+  .loginContainer,
+  .registerContainer {
+    width: 100%;
+  }
+
+  .loginContainer form,
+  .registerContainer form {
+    flex-direction: column;
+  }
+
+  .loginContainer form input,
+  .loginContainer form button,
+  .registerContainer form input,
+  .registerContainer form button {
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+}

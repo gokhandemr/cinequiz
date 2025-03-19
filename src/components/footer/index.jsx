@@ -1,29 +1,40 @@
-// Router DOM
-import {Link} from "react-router-dom";
+// React
+import { useState } from 'react';
 // Style
-import style from "./style.module.css";
+import style from './style.module.css';
 // Logo
-import tmdbLogo from "../../assets/tmdb-logo.svg";
+import tmdbLogo from '../../assets/tmdb-logo.svg';
+// Components
+import LightMode from '../light-mode';
 
 export default function Footer() {
-  const language = localStorage.getItem("language");
+  const [isLightModeActive, setIsLightModeActive] = useState(false);
+
+  const handleLightModeClick = () => {
+    setIsLightModeActive(true);
+    setTimeout(() => {
+      setIsLightModeActive(false);
+    }, 8000);
+  };
 
   return (
-    <footer className={style.container}>
-      <div>
+    <>
+      <footer className={style.container}>
         <div>
-          <h4>CINEQUIZ</h4>
+          <h6 className={style.footerLogo}>CINEQUIZ</h6>
+          <span>|</span>
+          <button className={style.lightModeButton} onClick={handleLightModeClick}>
+            Açık Mod
+          </button>
         </div>
-        {language === "eng" && (
-          <div>
-            <p>"This website utilizes ChatGPT for English translations."</p>
-          </div>
-        )}
+
         <div className={style.tmdbContainer}>
           <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-          <img src={tmdbLogo} alt="tmdb logo" />
+          <img src={tmdbLogo} alt='tmdb logo' />
         </div>
-      </div>
-    </footer>
+      </footer>
+
+      {isLightModeActive && <LightMode />}
+    </>
   );
 }

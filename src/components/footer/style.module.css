@@ -1,68 +1,76 @@
 .container {
-    width: 100%;
-    padding: 16px 0;
-    position: relative;
-    border-top: 1px solid #0b0b0b;
-    color: #444;
-    background: #0000003b;
-    backdrop-filter: blur(10px);
+  width: 100%;
+  height: 15dvh;
+  padding: 0 24px;
+  position: relative;
+  color: var(--secondary-color);
+  background: #212124;
+  border-top: 2px solid #0b0b0b;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.container>:nth-child(1) {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1440px;
-    height: 100%;
-    margin: auto;
-    padding: 0 24px;
-}
-
-.container>:nth-child(1) div {
-    width: 33.333%;
+.footerLogo {
+  font-size: 14px;
 }
 
 .tmdbContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .tmdbContainer img {
-    width: 120px;
+  width: 120px;
 }
 
-.container>:nth-child(1)>:nth-child(2)>p,
 .tmdbContainer p {
-    font-size: 12px;
-    margin-bottom: 8px;
-    text-align: center;
+  font-size: 12px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.container > :first-child {
+  display: flex;
+  align-items: center;
+}
+
+.footerLogo,
+.container > :first-child span {
+  margin-right: 36px;
+}
+.lightModeButton:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 767px) {
-    .tmdbContainer {
-        width: 100%;
-        align-items: center;
-    }
+  .container {
+    height: auto;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    padding: 24px 12px;
+  }
 
-    .container>:nth-child(1) div {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid #171717;
-        padding-bottom: 12px;
-        margin-bottom: 12px;
-    }
+  .tmdbContainer {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgb(53, 53, 53);
+  }
 
-    .container>:nth-child(1) div:last-child {
-        border: none;
-        padding: 0;
-        margin: 0;
-    }
+  .container > :first-child {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .container>:nth-child(1) {
-        flex-wrap: wrap;
-        align-content: center;
-        flex-direction: column;
-    }
+  .footerLogo,
+  .container > :first-child span {
+    display: none;
+  }
 }

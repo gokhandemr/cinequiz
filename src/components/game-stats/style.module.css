@@ -1,0 +1,92 @@
+.container {
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #090909;
+  box-shadow: inset 0 -1px var(--grey), 0px 10px 10px 0px #00000060;
+  z-index: 100;
+}
+
+.health,
+.score {
+  display: flex;
+  align-items: center;
+}
+
+.health span {
+  margin: 0 4px;
+}
+
+.health img:last-child {
+  margin: 0;
+}
+
+.health img,
+.score img {
+  margin-right: 8px;
+}
+
+.disabled {
+  animation: disabled 1s ease-in-out;
+  opacity: 0.05;
+}
+
+.score {
+  position: absolute;
+  right: 24px;
+}
+
+.score span {
+  margin-right: 8px;
+}
+
+.time {
+  position: absolute;
+  left: 24px;
+}
+
+@keyframes disabled {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  .container {
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 84px;
+  }
+
+  .health {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .time,
+  .score {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-top: 48px;
+  }
+
+  .score span {
+    display: none;
+  }
+}

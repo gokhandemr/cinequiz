@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    background: var(--black);
+    padding: 8px 24px;
+    margin-right: 12px;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    border-bottom: 2px solid var(--grey);
+    transition: all .5s;
+    z-index: 10;
+}
+
+.container img {
+    margin-right: 8px;
+}
+
+.container:hover {
+    background-color: var(--red);
+    border-color: white;
+    transition: all .5s;
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .container:last-child {
+        margin: 0;
+    }
+}

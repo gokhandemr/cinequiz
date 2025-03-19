@@ -1,0 +1,80 @@
+.container {
+    width: 100%;
+    height: calc(100% - 130px);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background: url('../../assets//images/graphy-dark.png') center var(--black);
+}
+
+.container.correct {
+    background-color: green;
+    animation: correct 1s ease
+}
+
+@keyframes correct {
+    from {
+        background-color: transparent;
+    }
+
+    to {
+        background-color: green;
+    }
+}
+
+.container.wrong {
+    background-color: red;
+    animation: wrong 1s ease;
+    opacity: .2;
+}
+
+@keyframes wrong {
+    from {
+        background-color: transparent;
+        opacity: 1;
+    }
+
+    to {
+        background-color: red;
+        opacity: .2;
+    }
+}
+
+.container img:nth-child(1) {
+    width: auto;
+    height: 100%;
+    z-index: 20;
+}
+
+.container img:nth-child(2) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .1;
+    transform: rotateY(180deg);
+}
+
+.shuffledTitleActive {
+    opacity: .2;
+}
+
+@media only screen and (max-width: 1023px) {
+    .container img:nth-child(1) {
+        width: 100%;
+        object-fit: contain;
+    }
+
+
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        height: calc(75dvh - (60px + 120px))
+    }
+}
