@@ -2,9 +2,10 @@ import style from './style.module.css';
 
 export default function RankingTable({ title, thead, tbody }) {
   const categoryConvert = (cat) => {
-    let newCategory = cat.split('-')[0];
-    let newOrigin = cat.split('-')[1];
-    newCategory = newCategory === 'movies' ? 'Filmler' : newCategory === 'tv-series' ? 'Diziler' : 'Karışık';
+    let array = cat.split('-')
+    let newCategory = array[0];
+    let newOrigin = array[array.length-1];
+    newCategory = newCategory === 'movies' ? 'Filmler' : newCategory === 'tv' ? 'Diziler' : 'Karışık';
     newOrigin = newOrigin === 'local' ? 'Yerli' : 'Global';
     return `${newCategory} / ${newOrigin}`;
   };
